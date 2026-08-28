@@ -4,8 +4,10 @@ import router from './router'
 import MenuComponent from '@/components/MenuComponent.vue';
 import MessageComponent from './components/MessageComponent.vue';
 import CardComponent from './components/CardComponent.vue';
+import ProductosNuevos from './components/ProductosNuevos.vue';
 
 const app = createApp(App).use(router).use(router);
+app.component("ProductosNuevos",ProductosNuevos);
 app.component("MenuComponent",MenuComponent);
 app.component("MessageComponent",MessageComponent);
 app.component("CardComponent",CardComponent);
