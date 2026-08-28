@@ -5,8 +5,8 @@
       <productos-nuevos v-for="Portatil in Portatiles" 
       :key="Portatil.id" 
       :imagen="Portatil.imagen" 
-      :nombre="Portatil.nombre" 
       :precio="Portatil.precio"
+      :nombre="Portatil.nombre" 
       :descripcion="Portatil.descripcion">
     </productos-nuevos>
     </div>
@@ -31,15 +31,15 @@ export default {
         imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIz04agO18DCDbW-eDOsbFVvWUBjMrAOoNj5-PVxfqaQ&s=10",
         nombre: "MSI CYBORG 15",
         precio: "2.500.000",
-        descripcion: "XD1"
+        descripcion: "\nTamaño de la pantalla - 15 pulgadas \n Nucleos del procesador - Octa Core \n Memoria RAM -16GB \n Almacenamiento - 512GB SSD"
         
       },
       {
         id: "2",
         imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuRJLthDbkXlKfa5ghyMTIAbTSYGcCTjRl80Gv0AIcaA&s",
         nombre: "HP VICTUS 15",
-        precio: "2.500.000",
-        descripcion: "Tamaño de la pantalla - 15 pulgadas \n Nucleos del procesador - Octa Core \n Memoria"
+        precio: "2.500.000$",
+        descripcion: "\nTamaño de la pantalla - 15 pulgadas \n Nucleos del procesador - Octa Core \n Memoria RAM -16GB \n Almacenamiento - 512GB SSD"
         
       }
 

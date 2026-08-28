@@ -2,8 +2,9 @@
     <div class="Portatil">
         <img class="Portatil-IMG" :src="imagen" alt="">
         <h1>{{nombre }}</h1>
+        <h2>{{precio}}</h2>
         <p>{{ descripcion }}</p>
-        <h3>{{precio}}</h3>
+        
     </div>
 </template>
 
@@ -28,9 +29,17 @@ export default {
         box-shadow: rgba(0,0,0, 0.44) 0px 3px 8px;
     }
 
-    .Portatil h3{
+    .Portatil h1{
         margin: 2px;
         text-align: center;
+    }
+    .Portatil h2{
+        margin: 2px;
+        text-align: center;
+        color: green;
+    }
+    .Portatil p{
+        margin: 30px;
     }
     .Portatil-IMG{
         width: 100%;
