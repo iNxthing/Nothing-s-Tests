@@ -3,12 +3,19 @@
     <menu-component></menu-component>
     <h1>HOLA ESTA ES MI APP</h1>
     <div class="container">
-          <CardComponent v-for="Album in Albums" :key="Album.id" 
+      <productos-nuevos v-for="Portatil in Portatiles" 
+      :key="Portatil.id" 
+      :imagen="Portatil.imagen" 
+      :nombre="Portatil.nombre" 
+      :precio="Portatil.precio"
+      :descripcion="Portatil.descripcion">
+    </productos-nuevos>
+          <!-- <CardComponent v-for="Album in Albums" :key="Album.id" 
                       :imagen="Album.imagen" 
                       :nombre="Album.nombre" 
                       :parrafo="Album.parrafo" 
                       :edad="Album.año">
-      </CardComponent>
+      </CardComponent> -->
       
 
       <!-- <CardComponent :imagen="juan.urlImage" :nombre="juan.nombre" :parrafo="juan.info" :edad="juan.edad">
@@ -42,7 +49,6 @@
        nombre=""
        parrafo="">
       </CardComponent> -->
-      
     </div>
   </div>
 </template>
@@ -59,21 +65,21 @@ export default {
   },
   data(){
     return{
-      Albums: [
+      Portatiles: [
       {
         id: "1",
         imagen: "https://i.pinimg.com/736x/30/2e/3e/302e3e176b936fe2296b624d268d243d.jpg",
         nombre: "OK COMPUTER",
-        año: 1995,
-        parrafo: "LetDown"
+        precio: "2.500.000",
+        descripcion: "XD1"
         
       },
       {
         id: "2",
-        imagen: "https://i.pinimg.com/736x/f6/51/38/f65138a38c6a5e398b67ac657d1c5664.jpg",
-        nombre: "The Bends",
-        año: 1995,
-        parrafo: "Bullet Proof... I wish i was"
+        imagen: "https://i.pinimg.com/736x/30/2e/3e/302e3e176b936fe2296b624d268d243d.jpg",
+        nombre: "OK COMPUTER",
+        precio: "2.500.000",
+        descripcion: "XD2"
         
       }
 
