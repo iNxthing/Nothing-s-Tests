@@ -3,7 +3,9 @@
         <img class="card-img" :src="imagen" alt="">
         <h3>{{ nombre }}</h3>
         <p>{{ parrafo }}</p>
-        <button class="boton-card"></button>
+        <span v-if="año >=2000" class="mayor">Mayor de año</span>
+        <span v-else class="menor">Menor de año</span>
+        <button class="boton-card">Save</button>
     </div>
 </template>
 
@@ -12,7 +14,8 @@ export default {
     props:{
         imagen: String,
         nombre: String,
-        parrafo: String
+        parrafo: String,
+        año: Number
     }
 
 }

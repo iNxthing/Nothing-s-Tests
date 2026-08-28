@@ -3,16 +3,46 @@
     <menu-component></menu-component>
     <h1>HOLA ESTA ES MI APP</h1>
     <div class="container">
-          <card-component
-            imagen="https://i.pinimg.com/736x/20/d4/73/20d47343d108e7cb98f229db600744bc.jpg"
-            nombre="Whatever People Say I Am, That's What I'm Not"
-            parrafo="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus velit, qui ut quasi minima corporis dolor eum, dolorem neque temporibus totam omnis repellat quos ipsam ducimus deserunt, nam enim cupiditate?"
-          ></card-component>
-          <message-component
-          foto_perfil="https://i.pinimg.com/1200x/04/c7/4d/04c74d8bb3a31fa950d6b4d3ac96aa32.jpg"
-          nombre_usuario="Nothing"
-          imagen="https://i.pinimg.com/736x/12/66/94/1266948080bf9d3b09274d5ec91d3bd0.jpg"
-          ></message-component>
+          <CardComponent v-for="Album in Albums" :key="Album.id" 
+                      :imagen="Album.imagen" 
+                      :nombre="Album.nombre" 
+                      :parrafo="Album.parrafo" 
+                      :edad="Album.año">
+      </CardComponent>
+      
+
+      <!-- <CardComponent :imagen="juan.urlImage" :nombre="juan.nombre" :parrafo="juan.info" :edad="juan.edad">
+      </CardComponent>
+
+      <CardComponent :imagen="theo.urlImage" :nombre="theo.nombre" :parrafo="theo.info" :edad="theo.edad">
+      </CardComponent> -->
+
+      <!-- <input v-model="txtNombre" type="text">
+      <h1>{{ txtNombre }}</h1> -->
+      <!-- <button @click="saludar">SALUDAR</button> -->
+
+
+      <!-- <CardComponent imagen="https://primefaces.org/cdn/primevue/images/card-vue.jpg" nombre="Theo"
+        parrafo="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas! ">
+      </CardComponent>
+      <CardComponent imagen="https://primefaces.org/cdn/primevue/images/card-vue.jpg" nombre="Rolon"
+        parrafo="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas! ">
+      </CardComponent>
+
+      <CardComponent imagen="https://primefaces.org/cdn/primevue/images/card-vue.jpg" nombre="Oscar"
+        parrafo="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas! ">
+      </CardComponent>
+
+      <CardComponent imagen="https://primefaces.org/cdn/primevue/images/card-vue.jpg" nombre="REguillo"
+        parrafo="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas! ">
+      </CardComponent> -->
+
+      <!-- <CardComponent
+       imagen=""
+       nombre=""
+       parrafo="">
+      </CardComponent> -->
+      
     </div>
   </div>
 </template>
@@ -26,13 +56,58 @@ export default {
   components: {
   
 
-  }
+  },
+  data(){
+    return{
+      Albums: [
+      {
+        id: "1",
+        imagen: "https://i.pinimg.com/736x/30/2e/3e/302e3e176b936fe2296b624d268d243d.jpg",
+        nombre: "OK COMPUTER",
+        año: 1995,
+        parrafo: "LetDown"
+        
+      },
+      {
+        id: "2",
+        imagen: "https://i.pinimg.com/736x/f6/51/38/f65138a38c6a5e398b67ac657d1c5664.jpg",
+        nombre: "The Bends",
+        año: 1995,
+        parrafo: "Bullet Proof... I wish i was"
+        
+      }
+
+
+      ]
+    }
+    
+  },
+  methods:{
+     saludar: function(){
+      alert("Hola " + this.nombre)
+
+     } 
+    }
 }
 </script>
 
 <style>
   .container{
     display: flex;
-    justify-content: space-between;
+    gap: 10px;
+    justify-content: space-evenly;
   }
+  .Card1{
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  }
+  .Card1:hover, .Card1:focus-visible{
+    box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+  }
+  @media (prefers-reduced-motion: no-preference){
+    .Card1:hover,.Card1:focus-visible{
+      transform: scale(1.1);
+    }
+  }
+
 </style>

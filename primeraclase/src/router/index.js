@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Contact from '@/views/ContactUs.vue'
+import CompuLago from '@/views/CompuLago.vue'
 
 const routes = [
   {
@@ -12,6 +13,11 @@ const routes = [
     path: '/contactus',
     name: 'ContactUs',
     component: Contact
+  },
+  {
+    path: '/CompuLago',
+    name: 'CompuLago',
+    component: CompuLago
   },
   {
     path: '/about',
