@@ -3,6 +3,8 @@
         <img class="Portatil-IMG" :src="imagen" alt="">
         <h1>{{nombre }}</h1>
         <h2>{{precio}}</h2>
+        <h3 class="Disponible" v-if="stock > 0">Stock: {{ stock }}</h3>
+        <h3 class="Agotado" v-else>Producto agotado</h3>
         <p>{{ descripcion }}</p>
         
     </div>
@@ -14,6 +16,7 @@ export default {
         imagen: String,
         nombre: String,
         precio: Number,
+        stock : Number,
         descripcion: String
         
     }
@@ -23,7 +26,7 @@ export default {
 
 <style>
     .Portatil{
-        height: 650px;
+        height: 600px;
         width: 350px;
         border-radius: 12px;
         box-shadow: rgba(0,0,0, 0.44) 0px 3px 8px;
@@ -40,6 +43,8 @@ export default {
     }
     .Portatil p{
         margin: 30px;
+        white-space: pre-line;
+        line-height: 1.4;
     }
     .Portatil-IMG{
         width: 100%;
@@ -54,5 +59,8 @@ export default {
     }
     .boton-Portatil:hover{
         cursor: pointer;
+    }
+    .Agotado{
+        color: red;
     }
 </style>
